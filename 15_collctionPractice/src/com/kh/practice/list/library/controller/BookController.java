@@ -8,7 +8,7 @@ import com.kh.practice.list.library.model.vo.Book;
 
 public class BookController {
 	
-	private ArrayList <Book >bookList = new ArrayList();
+	private ArrayList <Book>bookList = new ArrayList();
 	
 	public BookController() {
 		// TODO Auto-generated constructor stub
