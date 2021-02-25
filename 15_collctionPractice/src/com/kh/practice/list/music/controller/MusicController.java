@@ -54,9 +54,12 @@ public class MusicController {
 	public Music setMusic (String title, Music music) {
 		for (int i=0 ; i<list.size() ; i++) {
 			if(list.get(i).getTitle().equals(title)) {
-				Music m = list.get(i);
+				List <Music> m = new ArrayList();
+				m.add(list.get(i));
 				list.set(i, music);
-				return m;//set하기 전 객체를 저장해서 리턴했는데 왜 바뀐 후 값이 리턴될까?
+				return m.get(0);//set하기 전 객체를 저장해서 리턴했는데 왜 바뀐 후 값이 리턴될까?
+								//값 자체가 아닌 주소값을 넘겨주는 것이기 때문에, 결국은 그 주소에서 값이 수정되고 수정된 값이 리턴될 수 밖에 없음
+								//이를 해결하려면 깊은 복사를 통해 넘겨줘야 함
 			}
 		}
 		return null;
